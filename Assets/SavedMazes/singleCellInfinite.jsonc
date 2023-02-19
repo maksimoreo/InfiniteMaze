@@ -1,0 +1,40 @@
+{
+  "vertices": [
+    {
+      "id": 0,
+      "generated": true,
+      "centerUpWallId": 12,
+      "centerRightWallId": 6,
+      "centerDownWallId": 10,
+      "centerLeftWallId": 0,
+      "upRightWallId": 4,
+      "upLeftWallId": 0,
+      "rightUpWallId": 2,
+      "rightDownWallId": 9,
+      "centerFloor": {
+        "floorId": 0,
+        "rotation": 2
+      },
+      "upFloor": {
+        "floorId": 14,
+        "rotation": 0
+      },
+      "rightFloor": {
+        "floorId": 8,
+        "rotation": 0
+      }
+    },
+  ],
+  "edges": [
+    {
+      "first": 0,
+      "second": 0,
+      "direction": 0
+    },
+    {
+      "first": 0,
+      "second": 0,
+      "direction": 1
+    },
+  ]
+}
