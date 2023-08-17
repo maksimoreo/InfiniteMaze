@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // Manages whole Application
 public class GameManager : MonoBehaviour
 {
+    public GameObject onScreenStick;
     public LevelLoader levelLoader;
 
     void Start()
@@ -16,5 +15,15 @@ public class GameManager : MonoBehaviour
     public void ReloadScene()
     {
         levelLoader.ReloadScene();
+    }
+
+    public void EnableOnScreenStick()
+    {
+        onScreenStick.SetActive(true);
+    }
+
+    public void DisableOnScreenStick()
+    {
+        onScreenStick.SetActive(false);
     }
 }

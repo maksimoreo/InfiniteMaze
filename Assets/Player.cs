@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +13,8 @@ public class Player : MonoBehaviour
     public Transform cameraTransform;
     public Vector3 cameraOffset;
 
+    public InputActionReference movementInputAction;
+
     private Rigidbody2D body;
     private Vector2 input;
 
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour
     private string playingAnimation;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         realPosition = GetRealPosition();
         body = GetComponent<Rigidbody2D>();
@@ -29,12 +30,9 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        input = new Vector2(
-            Input.GetAxis("Horizontal"),
-            Input.GetAxis("Vertical")
-        );
+        input = movementInputAction.action.ReadValue<Vector2>();
 
         Vector3 worldPosition = new Vector3(transform.position.x, 0, transform.position.y);
 
@@ -69,7 +67,7 @@ public class Player : MonoBehaviour
         cameraTransform.LookAt(player3dModel.transform);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         body.velocity = input * speed;
 
