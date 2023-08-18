@@ -1,8 +1,7 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
+using UnityEngine;
 
 // BFS with depth tracking: https://stackoverflow.com/a/55517515
 public class FiniteMazeGenerator : BaseMazeGenerator
@@ -151,7 +150,7 @@ public class FiniteMazeGenerator : BaseMazeGenerator
 
             // Break random connections
             int brokenConnections = 0;
-            for (int i = 0; i < disconnectAttempts && brokenConnections < maxAdditionalConnections; i++)
+            for (int i = 0; i < disconnectAttempts && brokenConnections < maxDisconnects; i++)
                 if (BreakRandomConnection())
                     brokenConnections++;
 

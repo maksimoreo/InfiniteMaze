@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class MazeRenderer : MonoBehaviour
@@ -38,10 +36,8 @@ public class MazeRenderer : MonoBehaviour
 
     private List<Node> renderedNodes = new List<Node>();
 
-    void Start()
+    public void RenderFirstTime()
     {
-        Application.targetFrameRate = 60;
-
         root = mazeGenerator.GenerateRoot();
 
         RenderMaze(Vector2.zero, Vector2Int.zero);
